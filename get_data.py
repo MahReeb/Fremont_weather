@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import os
 from datetime import datetime, timedelta
 
-latitude = 37.548271
-longitude = -121.988571
+latitude = 54.644514
+longitude = 45.454155
 
 today = datetime.now()
 week_ago = today - timedelta(days=7)
@@ -39,7 +39,7 @@ print(df)
 #------------------------------------------------------------------
 
 plt.figure(figsize=(10, 6))
-plt.plot(df["date"], df["max_temp"], marker = "o", label = "Max Temperature")
+plt.plot(df["date"], df["max_temp"], marker = "x", label = "Max Temperature")
 plt.plot(df["date"], df["min_temp"], marker = "o", label = "Min Temperature")
 
 plt.xlabel("Date")
@@ -47,7 +47,7 @@ plt.ylabel("Temperature (C)")
 plt.title("Fremont Weather - Past 7 Days")
 plt.legend()
 
-plt.xticks(rotation = 0)
+plt.xticks(rotation = 30)
 plt.tight_layout()
 
 plt.savefig("Weather_Chart.png")
